@@ -39,7 +39,7 @@ class LoginScreen extends StatelessWidget {
                             height: 25,
                           ),
                           const Text(
-                            'Login to contact with the world',
+                            'Login to see everything new...!',
                             style: TextStyle(fontSize: 15, color: Colors.grey),
                           ),
                           const SizedBox(

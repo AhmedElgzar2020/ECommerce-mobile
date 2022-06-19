@@ -21,6 +21,7 @@ class RegisterScreen extends StatelessWidget {
             child: BlocConsumer<SocialRegisterCubit,SocialRegisterStates>(
                 builder: (context , state){
                   return Scaffold(
+                    backgroundColor: Colors.white,
                     appBar: AppBar(
                       systemOverlayStyle: const SystemUiOverlayStyle(
                         statusBarColor: Colors.white,
@@ -51,7 +52,7 @@ class RegisterScreen extends StatelessWidget {
                                   height: 25,
                                 ),
                                 const Text(
-                                  'Register to contact with the world',
+                                  'Register to see everything new...!',
                                   style: TextStyle(fontSize: 15, color: Colors.grey),
                                 ),
                                 const SizedBox(
