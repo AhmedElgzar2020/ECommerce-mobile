@@ -7,8 +7,8 @@ import '../register/register.dart';
 import 'cubit/cubit.dart';
 import 'cubit/states.dart';
 
-class SocialLoginScreen extends StatelessWidget {
-  SocialLoginScreen({Key? key}) : super(key: key);
+class LoginScreen extends StatelessWidget {
+  LoginScreen({Key? key}) : super(key: key);
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
