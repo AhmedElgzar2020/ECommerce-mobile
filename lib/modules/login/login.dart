@@ -1,11 +1,12 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
+import 'package:e_commerce_layout/modules/e_commerce_layout/ecommerce_layout.dart';
+import 'package:e_commerce_layout/modules/login/cubit/states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../shared/components.dart';
 import '../register/register.dart';
 import 'cubit/cubit.dart';
-import 'cubit/states.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -16,8 +17,8 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SocialLoginCubit(),
-      child: BlocConsumer<SocialLoginCubit, SocialLoginStates>(
+      create: (context) => ECommerceLoginCubit(),
+      child: BlocConsumer<ECommerceLoginCubit, ECommerceLoginStates>(
           builder: (context, state) => Scaffold(
                 body: Center(
                   child: Form(
@@ -65,7 +66,7 @@ class LoginScreen extends StatelessWidget {
                             onSubmit: (){
 
                             },
-                              obscure: SocialLoginCubit.get(context).isVisible,
+                              obscure: ECommerceLoginCubit.get(context).isVisible,
                               validate: (v){
                               if(v.isEmpty){
                                 return 'please en';
@@ -76,12 +77,12 @@ class LoginScreen extends StatelessWidget {
                               prefixIcon: Icons.lock,
                               suffixIcon: IconButton(
                                   onPressed: () {
-                                    SocialLoginCubit.get(context)
+                                    ECommerceLoginCubit.get(context)
                                         .passwordVisible();
                                   },
-                                  icon: SocialLoginCubit.get(context).suffix),
+                                  icon: ECommerceLoginCubit.get(context).suffix),
                               onTab: () {
-                                SocialLoginCubit.get(context).passwordVisible();
+                                ECommerceLoginCubit.get(context).passwordVisible();
                               },
                               label: 'password',
                               hint: 'Enter your password'),
@@ -89,17 +90,18 @@ class LoginScreen extends StatelessWidget {
                             height: 30,
                           ),
                           ConditionalBuilder(
-                              condition: state is! SocialLoginLoadingState,
+                              condition: state is! ECommerceLoginLoadingState,
                               builder: (context) {
                                 return specialButton(
                                     text: 'login',
                                     onPress: (){
-                                      if(formKey.currentState!.validate()){
-                                        SocialLoginCubit.get(context).userLogin(
-                                            email: emailController.text,
-                                            password: passwordController.text);
-
-                                      }
+                                      // if(formKey.currentState!.validate()){
+                                      //   ECommerceLoginCubit.get(context).userLogin(
+                                      //       email: emailController.text,
+                                      //       password: passwordController.text);
+                                      //
+                                      // }
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => ECommerceLayout()));
                                     }
                                 );
                               },

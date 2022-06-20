@@ -1,18 +1,18 @@
-abstract class SocialLoginStates {}
-class SocialLoginInitialState extends SocialLoginStates{}
-class SocialLoginLoadingState extends SocialLoginStates{}
-class SocialLoginSuccessState extends SocialLoginStates{
+abstract class ECommerceLoginStates {}
+class ECommerceLoginInitialState extends ECommerceLoginStates{}
+class ECommerceLoginLoadingState extends ECommerceLoginStates{}
+class ECommerceLoginSuccessState extends ECommerceLoginStates{
  final dynamic value;
 
-  SocialLoginSuccessState(this.value);
+  ECommerceLoginSuccessState(this.value);
 }
-class SocialLoginErrorState extends SocialLoginStates{
+class ECommerceLoginErrorState extends ECommerceLoginStates{
   final String error;
-  SocialLoginErrorState(this.error);
+  ECommerceLoginErrorState(this.error);
 }
-class SocialChangePasswordVisibilityState extends SocialLoginStates{}
+class ECommerceChangePasswordVisibilityState extends ECommerceLoginStates{}
 
-class NavigatedDone extends SocialLoginStates{}
+class NavigatedDone extends ECommerceLoginStates{}
 
 
 
